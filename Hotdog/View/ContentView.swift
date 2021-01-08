@@ -27,7 +27,9 @@ struct ContentView: View {
         image = inputImage
         
         if let ciImage = CIImage(image: image){
-            showAnswer(result: logic.detect(image: ciImage))
+            DispatchQueue.global(qos: .background).async {
+                self.showAnswer(result: logic.detect(image: ciImage))
+            }
         }
     }
     
