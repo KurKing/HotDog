@@ -41,13 +41,19 @@ struct InfoView: View {
                     HStack {
                         Text("Compatibility").foregroundColor(.gray)
                         Spacer()
-                        Text("iPhone, iPad & Mac")
+                        Text("iPhone, iPad")
                     }//:HStack
                     
                     HStack {
                         Text("Developer").foregroundColor(.gray)
                         Spacer()
                         Text("Oleksii Kurkin")
+                    }//:HStack
+                    
+                    HStack {
+                        Text("GitHub nick").foregroundColor(.gray)
+                        Spacer()
+                        Text("KurKing")
                     }//:HStack
                     
                     HStack {
