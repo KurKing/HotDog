@@ -9,17 +9,11 @@
 import SwiftUI
 
 struct AnswerView: View {
-    
-    //MARK: - Properties
-    
     let answer: Bool
+    let haptics = UINotificationFeedbackGenerator()
     @Binding var showAnswer: Bool
     
-    let haptics = UINotificationFeedbackGenerator()
-    
-    //MARK: - Body
     var body: some View {
-        
         VStack{
             Text(answer ? "It`s a hot dog!" : "It`s not a hot dog!")
                 .font(.system(.largeTitle, design: .rounded))
@@ -32,7 +26,7 @@ struct AnswerView: View {
                 .background(
                     Color(answer ? .green : .red)
                     
-            )
+                )
             
             Spacer()
             
@@ -44,12 +38,9 @@ struct AnswerView: View {
             Spacer()
             
             Button(action: {
-                
                 self.haptics.notificationOccurred(.success)
                 playSound(sound: "sound-rise", type: "mp3")
-                
                 self.showAnswer = false
-                
             }) {
                 Text("OK!")
                     .font(.system(.largeTitle, design: .rounded))
@@ -62,16 +53,15 @@ struct AnswerView: View {
                     .background(
                         Color(answer ? .green : .red)
                         
-                )
+                    )
             }
             
         }//:VStack
-            
-            .frame(width: 350, height: 350, alignment: .center)
-            .background(
-                Color(red: 0, green: 0, blue: 0, opacity: 0.3)
+        .frame(width: 350, height: 350, alignment: .center)
+        .background(
+            Color(red: 0, green: 0, blue: 0, opacity: 0.3)
         )
-            .cornerRadius(20)
+        .cornerRadius(20)
     }//:Body
 }//end.
 

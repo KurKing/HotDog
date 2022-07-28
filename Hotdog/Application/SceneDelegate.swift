@@ -20,10 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
           scene.sizeRestrictions?.maximumSize = CGSize.init(width: 600, height: 800)
         }
 
-        // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
-
-        // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: contentView)

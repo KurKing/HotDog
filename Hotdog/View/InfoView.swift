@@ -9,26 +9,21 @@
 import SwiftUI
 
 struct InfoView: View {
-    
-    //MARK: - Properties
-    
     @State private var enableNotification = true
     @State private var backgroundRefresh = false
     
     @Environment(\.presentationMode) var presentationMode
     
-    //MARK: - Body
     var body: some View {
         
         VStack(alignment: .center, spacing: 5){
             Text("Hot dog app")
-            .font(.system(.largeTitle, design: .rounded))
-            .bold()
-            .shadow(radius: 2)
-            .padding(.vertical, 10)
+                .font(.system(.largeTitle, design: .rounded))
+                .bold()
+                .shadow(radius: 2)
+                .padding(.vertical, 10)
             
             Form{
-                
                 //MARK: Section #1
                 Section(header: Text("Hot Dog")) {
                     
@@ -61,7 +56,6 @@ struct InfoView: View {
                         Spacer()
                         Text("1.0.0")
                     }//:HStack
-                    
                 }//:Section #1
                 
                 //MARK: Section #2
@@ -78,25 +72,22 @@ struct InfoView: View {
                         Spacer()
                         Text("Inceptionv3")
                     }//:HStack
-                    
                 }//:Section #2
-                
             }//:Form
         }//:VStack
-            .frame(maxWidth: 640)
-            .overlay(
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "xmark.circle")
-                        .font(.title)
-                }
+        .frame(maxWidth: 640)
+        .overlay(
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "xmark.circle")
+                    .font(.title)
+            }
                 .padding(.top, 15)
                 .padding(.trailing, 20)
-                .accentColor(Color.secondary)
-                , alignment: .topTrailing
+                .accentColor(Color.secondary),
+            alignment: .topTrailing
         )
-        
     }//:Body
 }
 

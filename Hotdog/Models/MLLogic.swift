@@ -17,40 +17,22 @@ struct Logic {
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
             fatalError("can't load ML model")
         }
-        
         self.model = model
     }
     
     func detect(image: CIImage) -> Bool {
         var answer = false
         
-        
         let request = VNCoreMLRequest(model: model) { request, error in
             guard let results = request.results as? [VNClassificationObservation],
-                let topResult = results.first
-                else {
-                    fatalError("unexpected result type from VNCoreMLRequest")
-            }
-                        
-            if topResult.identifier.contains("hotdog") {
-                
-                answer = true
-                
-            } else {
-                
-                answer = false
-                
-            }
+                  let topResult = results.first else {
+                      return
+                  }
+            answer = topResult.identifier.contains("hotdog")
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
-        
-        do {
-            try handler.perform([request])
-        }
-        catch {
-            print(error)
-        }
+        try? handler.perform([request])
         
         return answer
     }

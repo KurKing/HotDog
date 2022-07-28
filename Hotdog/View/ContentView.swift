@@ -9,9 +9,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    //MARK: - Properties
-    
     @State var image = UIImage(named: "logo")!
     @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
@@ -33,23 +30,18 @@ struct ContentView: View {
         }
     }
     
-    //MARK: Show Answers
     func showAnswer(result: Bool) {
         showingAnswer = true
         answer = result
     }
     
-    //MARK: - Body
     var body: some View {
-        
         ZStack {
             VStack (alignment: .center, spacing: 0) {
-                
                 //MARK: Header
                 HStack(alignment: .center, spacing: 0){
                     
                     Spacer().frame(width: 40)
-                    
                     Spacer()
                     
                     Text("Hot dog")
@@ -72,23 +64,20 @@ struct ContentView: View {
                         InfoView()
                     }
                 }//:HStack
-                    .padding(.horizontal)
-                    .padding(.top, 10)
+                .padding(.horizontal)
+                .padding(.top, 10)
                 
                 //MARK: Main Image View
                 Spacer()
-                
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
                     .shadow(radius: 3)
                     .cornerRadius(20)
                     .padding()
-                
                 Spacer()
                 
                 //MARK: Footer button
-                
                 Button(action: {
                     self.showingImagePicker = true
                 }) {
@@ -98,17 +87,17 @@ struct ContentView: View {
                         .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.30), radius: 3, x: 0, y: 0)
                         .padding()
                 }//:Button
-                    .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-                        ImagePicker(image: self.$inputImage)
+                .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                    ImagePicker(image: self.$inputImage)
                 }
             }//:VStack
-                .padding(.bottom, 20)
-                .frame(maxWidth: 640, maxHeight: .infinity, alignment: .center)
-                .background(
-                    Image("bg")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
+            .padding(.bottom, 20)
+            .frame(maxWidth: 640, maxHeight: .infinity, alignment: .center)
+            .background(
+                Image("bg")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
             )
             .blur(radius: $showingAnswer.wrappedValue ? 5 : 0, opaque: false)
             
