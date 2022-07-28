@@ -11,6 +11,7 @@ import SwiftUI
 struct AnswerView: View {
     let answer: Bool
     let haptics = UINotificationFeedbackGenerator()
+    let soundPlayer = SoundPlayer()
     @Binding var showAnswer: Bool
     
     var body: some View {
@@ -39,7 +40,7 @@ struct AnswerView: View {
             
             Button(action: {
                 self.haptics.notificationOccurred(.success)
-                playSound(sound: "sound-rise", type: "mp3")
+                self.soundPlayer.playSound(sound: "sound-rise", type: "mp3")
                 self.showAnswer = false
             }) {
                 Text("OK!")
