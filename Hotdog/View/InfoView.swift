@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct InfoView: View {
+    
     @State private var enableNotification = true
     @State private var backgroundRefresh = false
     
@@ -16,7 +17,8 @@ struct InfoView: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 5){
+        VStack(alignment: .center, spacing: 5) {
+            
             Text("Hot dog app")
                 .font(.system(.largeTitle, design: .rounded))
                 .bold()
@@ -77,6 +79,7 @@ struct InfoView: View {
         }//:VStack
         .frame(maxWidth: 640)
         .overlay(
+            
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
             }) {

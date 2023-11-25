@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct AnswerView: View {
+    
     let answer: Bool
-    let haptics = UINotificationFeedbackGenerator()
-    let soundPlayer = SoundPlayer()
     @Binding var showAnswer: Bool
     
+    private let haptics = UINotificationFeedbackGenerator()
+    private let soundPlayer = SoundPlayer()
+        
     var body: some View {
+        
         VStack{
+            
             Text(answer ? "It`s a hot dog!" : "It`s not a hot dog!")
                 .font(.system(.largeTitle, design: .rounded))
                 .bold()
@@ -26,7 +30,6 @@ struct AnswerView: View {
                 .frame(maxWidth: .infinity)
                 .background(
                     Color(answer ? .green : .red)
-                    
                 )
             
             Spacer()
@@ -39,8 +42,9 @@ struct AnswerView: View {
             Spacer()
             
             Button(action: {
+                
                 self.haptics.notificationOccurred(.success)
-                self.soundPlayer.playSound(sound: "sound-rise", type: "mp3")
+                self.soundPlayer.playRiseSound()
                 self.showAnswer = false
             }) {
                 Text("OK!")
@@ -51,10 +55,7 @@ struct AnswerView: View {
                     .padding(.vertical, 10)
                     .shadow(radius: 1)
                     .frame(maxWidth: .infinity)
-                    .background(
-                        Color(answer ? .green : .red)
-                        
-                    )
+                    .background(Color(answer ? .green : .red))
             }
             
         }//:VStack
@@ -67,6 +68,7 @@ struct AnswerView: View {
 }//end.
 
 struct AnswerView_Previews: PreviewProvider {
+    
     @State static var show = false
     
     static var previews: some View {

@@ -11,24 +11,28 @@ import Vision
 import SwiftUI
 
 struct Logic {
-    let model: VNCoreMLModel
+    
+    private let model: VNCoreMLModel
     
     init() {
+        
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
+            
             fatalError("can't load ML model")
         }
+        
         self.model = model
     }
     
     func detect(image: CIImage) -> Bool {
+        
         var answer = false
         
-        let request = VNCoreMLRequest(model: model) { request, error in
-            guard let results = request.results as? [VNClassificationObservation],
-                  let topResult = results.first else {
-                      return
-                  }
-            answer = topResult.identifier.contains("hotdog")
+        let request = VNCoreMLRequest(model: model) { request, _ in
+            
+            answer = request.results?.compactMap({ $0 as? VNClassificationObservation })
+                .map({ $0.identifier })
+                .contains("hotdog") ?? false
         }
         
         let handler = VNImageRequestHandler(ciImage: image)

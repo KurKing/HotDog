@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @State var image = UIImage(named: "logo")!
+    
     @State private var inputImage: UIImage?
     @State private var showingImagePicker = false
     @State private var showingInfoView = false
@@ -20,6 +22,7 @@ struct ContentView: View {
     private let logic = Logic()
     
     func loadImage() {
+        
         guard let inputImage = inputImage else { return }
         image = inputImage
         
@@ -31,6 +34,7 @@ struct ContentView: View {
     }
     
     func showAnswer(result: Bool) {
+        
         showingAnswer = true
         answer = result
     }
@@ -110,7 +114,9 @@ struct ContentView: View {
 
 //MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
+        
         ContentView()
     }
 }

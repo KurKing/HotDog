@@ -9,16 +9,28 @@
 import AVFoundation
 
 class SoundPlayer {
-    var audioPlayer: AVAudioPlayer?
     
-    func playSound(sound: String, type: String) {
-        if let path = Bundle.main.path(forResource: sound, ofType: type) {
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-                audioPlayer?.play()
-            } catch {
-                print("ERROR: Could not find and play the sound file!")
-            }
+    private var audioPlayer: AVAudioPlayer?
+    
+    private func playSound(sound: String, type: String = "mp3") {
+        
+        guard let path = Bundle.main.path(forResource: sound, ofType: type),
+              let audioPlayer = try? AVAudioPlayer(contentsOf: URL(fileURLWithPath: path)) else {
+            
+            print("ERROR: Could not find and play the sound file!")
+            return
         }
+        
+        self.audioPlayer = audioPlayer
+        audioPlayer.play()
+    }
+}
+
+// MARK: - Public methods
+extension SoundPlayer {
+    
+    func playRiseSound() {
+        
+        playSound(sound: "sound-rise")
     }
 }

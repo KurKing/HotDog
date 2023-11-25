@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496F55CF2B1232240087177D /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 496F55CE2B1232240087177D /* Inceptionv3.mlmodel */; };
 		D2398DEE250A1C3D00FD5139 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2398DED250A1C3D00FD5139 /* AppDelegate.swift */; };
 		D2398DF0250A1C3D00FD5139 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2398DEF250A1C3D00FD5139 /* SceneDelegate.swift */; };
 		D2398DF2250A1C3D00FD5139 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2398DF1250A1C3D00FD5139 /* ContentView.swift */; };
 		D2398DF4250A1C3E00FD5139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2398DF3250A1C3E00FD5139 /* Assets.xcassets */; };
 		D2398DF7250A1C3E00FD5139 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2398DF6250A1C3E00FD5139 /* Preview Assets.xcassets */; };
 		D2398DFA250A1C3E00FD5139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2398DF8250A1C3E00FD5139 /* LaunchScreen.storyboard */; };
-		D2398E07250A29ED00FD5139 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D2398E06250A29ED00FD5139 /* Inceptionv3.mlmodel */; };
 		D2436EBA250A4807007AD6E4 /* MLLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2436EB9250A4807007AD6E4 /* MLLogic.swift */; };
 		D2543419250A30B700521B19 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2543418250A30B700521B19 /* ImagePicker.swift */; };
 		D2AFA514250A4D190098ED1B /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AFA513250A4D190098ED1B /* AnswerView.swift */; };
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		496F55CE2B1232240087177D /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		D2398DEA250A1C3D00FD5139 /* Hot dog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hot dog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2398DED250A1C3D00FD5139 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2398DEF250A1C3D00FD5139 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +32,6 @@
 		D2398DF6250A1C3E00FD5139 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2398DF9250A1C3E00FD5139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2398DFB250A1C3E00FD5139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2398E06250A29ED00FD5139 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		D2436EB9250A4807007AD6E4 /* MLLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLLogic.swift; sourceTree = "<group>"; };
 		D2543418250A30B700521B19 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D254341A250A413000521B19 /* Hotdog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hotdog.entitlements; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			children = (
 				D2398DF3250A1C3E00FD5139 /* Assets.xcassets */,
 				D2398DF8250A1C3E00FD5139 /* LaunchScreen.storyboard */,
-				D2398E06250A29ED00FD5139 /* Inceptionv3.mlmodel */,
+				496F55CE2B1232240087177D /* Inceptionv3.mlmodel */,
 				D2AFA519250A55D20098ED1B /* sound-rise.mp3 */,
 			);
 			path = "Supporting files";
@@ -203,9 +203,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2AFA516250A549F0098ED1B /* InfoView.swift in Sources */,
+				496F55CF2B1232240087177D /* Inceptionv3.mlmodel in Sources */,
 				D2AFA518250A554C0098ED1B /* PlaySound.swift in Sources */,
 				D2398DEE250A1C3D00FD5139 /* AppDelegate.swift in Sources */,
-				D2398E07250A29ED00FD5139 /* Inceptionv3.mlmodel in Sources */,
 				D2AFA514250A4D190098ED1B /* AnswerView.swift in Sources */,
 				D2543419250A30B700521B19 /* ImagePicker.swift in Sources */,
 				D2436EBA250A4807007AD6E4 /* MLLogic.swift in Sources */,
@@ -349,7 +349,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hotdog/Hotdog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hotdog/Preview Content\"";
-				DEVELOPMENT_TEAM = CUJ73BXL42;
+				DEVELOPMENT_TEAM = WG482W7ASB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Hotdog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,9 +358,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "KurKing-development.Hotdog";
 				PRODUCT_NAME = "Hot dog";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -371,7 +373,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hotdog/Hotdog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Hotdog/Preview Content\"";
-				DEVELOPMENT_TEAM = CUJ73BXL42;
+				DEVELOPMENT_TEAM = WG482W7ASB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Hotdog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,9 +382,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "KurKing-development.Hotdog";
 				PRODUCT_NAME = "Hot dog";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
